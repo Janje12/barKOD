@@ -47,19 +47,34 @@
             scroll-behavior: smooth;
         }
 
+        .test1 {
+            -webkit-animation: in 0.7s;
+        }
+
         .test1:hover {
-            animation-name: example;
+            -webkit-animation: out 0.3s;
             box-shadow: -5px 10px 10px rgba(53,28,115,1);
-            animation-duration: 0.3s;
-            cursor: pointer;
             animation-fill-mode: forwards;
+            cursor: pointer;
             animation-timing-function: linear;
         }
 
-        @keyframes example {
-            100% {
+        @keyframes out {
+            from {
+                transform: translate3d(0px, 0px, 0px)
+            }
+            to {
                 transform: translate3d(8px, -5px, 8px)
             }
+        }
+        @keyframes in {
+            from {
+                transform: translate3d(8px, -5px, 8px)
+            }
+            to {
+                transform: translate3d(0px, 0px, 0px)
+            }
+
         }
         .font-weight-bold {
             font-weight: 1500;
