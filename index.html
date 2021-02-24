@@ -16,7 +16,7 @@
 
         @font-face {
             font-family: 'MyWebFont';
-            src: url('envy.woff') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+            src: url('envy.woff') format('truetype');
         }
 
         .col {
@@ -49,7 +49,7 @@
 
         .test1:hover {
             animation-name: example;
-            box-shadow: -5px 10px 10px #CA196D;
+            box-shadow: -5px 10px 10px rgba(53,28,115,1);
             animation-duration: 0.3s;
             cursor: pointer;
             animation-fill-mode: forwards;
@@ -68,6 +68,14 @@
             color: #CA196D;
             font-size: 10rem;
             text-shadow: rgba(53,28,115,1) 2px 3px 10px;
+            bottom: 35px;
+            user-select: none;
+        }
+        .display-5 {
+            color: #F4A270;
+            user-select: none;
+            font-size: 4rem;
+            text-shadow: rgba(53,28,115,1) 2px 3px 10px;
         }
     </style>
 
@@ -76,7 +84,8 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-12 font-weight-bold text-center my-3">
-            <h1 class="display-1">HACKATHON</h1>
+            <h3 class="display-5 mb-0 pb-0">barKOD</h3>
+            <h1 class="display-1 mt-0 pt-0 position-relative">HACKATHON</h1>
         </div>
     </div>
     <div class="row mx-5 px-5 position-absolute">
