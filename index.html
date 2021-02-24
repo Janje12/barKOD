@@ -22,7 +22,7 @@
         .col {
             border-radius: 4px;
             background: rgb(53,28,115);
-            background: linear-gradient(0deg, rgba(53,28,115,1) 20%, rgba(203,25,109,1) 100%);
+            background: linear-gradient(0deg, rgba(53,28,115,1) 20%, #D6B1F9 100%);
             writing-mode: vertical-rl;
             text-orientation: mixed;
             width: 3rem;
@@ -71,7 +71,7 @@
             user-select: none;
         }
         .display-5 {
-            color: #F4A270;
+            color: #f4a270;
             user-select: none;
             font-size: 4rem;
         }
@@ -174,7 +174,7 @@
     const target = window.document.getElementsByTagName('h1')[0]
 
     const flickerLetter = letter => `<span style="animation: text-flicker-in-glow ${Math.random()*4}s linear both ">${letter}</span>`
-    const colorLetter = letter => `<span style="color: hsla(50%, 100%, 80%, 1);">${letter}</span>`;
+    const colorLetter = letter => `<span style="color: hsl(257, 55%, 31%);">${letter}</span>`;
     const flickerAndColorText = text =>
         text
             .split('')
