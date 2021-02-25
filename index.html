@@ -9,10 +9,28 @@
     <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;500&display=swap" rel="stylesheet">
     <link rel="preload" as="image" href="background-image.jpg">
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
         body {
             font-family: 'MyWebFont', monospace;
-            background-color: #130634;
+            margin: 0;
+            background-color: #1f1f1f;
+        }
+        canvas {
+            display: block;
+            vertical-align: bottom;
+        }
+        /* ---- particles.js container ---- */
+        #particles-js {
+            z-index: -1;
+            position: absolute;
             width: 100%;
+            height: 300%;
+            top: 0px;
+            background-color: #1d1d1d;
+            background-repeat: no-repeat;
+            background-size: cover;
         }
         @font-face {
             font-family: 'MyWebFont';
@@ -21,33 +39,26 @@
 
         .col {
             border-radius: 4px;
-            background: rgba(53,28,115,1);
-            background: linear-gradient(0deg, rgba(53,28,115,1) 20%, #C9196D 100%);
+            background: rgba(53, 28, 115, 1);
+            background: linear-gradient(0deg, rgba(53, 28, 115, 1) 20%, #C9196D 100%);
             width: 3rem;
             height: 110rem;
         }
 
         .col-thin {
-            writing-mode: vertical-rl;
-            text-orientation: mixed;
             border-radius: 4px;
-            background: rgb(53,28,115);
-            background: linear-gradient(0deg,rgba(53,28,115,1) 20%, #C9196D 100%);
+            background: rgb(53, 28, 115);
+            background: linear-gradient(0deg, rgba(53, 28, 115, 1) 20%, #C9196D 100%);
             width: 1.5rem;
             height: 110rem;
         }
+
         .col-wide {
             border-radius: 4px;
-            background: rgb(53,28,115);
-            background: linear-gradient(0deg, rgba(53,28,115,1) 20%, #C9196D 100%);
+            background: rgb(53, 28, 115);
+            background: linear-gradient(0deg, rgba(53, 28, 115, 1) 20%, #C9196D 100%);
             width: 4.5rem;
             height: 110rem;
-        }
-
-        .container-fluid {
-            display: block;
-            width: 100%;
-            margin: 0 auto;
         }
 
         a {
@@ -56,11 +67,7 @@
         }
 
         a:hover {
-            color: rgba(53,28,115,1);
-        }
-
-        html {
-            scroll-behavior: smooth;
+            color: rgba(53, 28, 115, 1);
         }
 
         .test1 {
@@ -69,7 +76,7 @@
 
         .test1:hover {
             -webkit-animation: out 0.3s;
-            box-shadow: -5px 10px 10px rgba(53,28,115,1);
+            box-shadow: -5px 10px 10px rgba(53, 28, 115, 1);
             animation-fill-mode: forwards;
             cursor: pointer;
             animation-timing-function: linear;
@@ -83,6 +90,7 @@
                 transform: translate3d(8px, -5px, 8px)
             }
         }
+
         @keyframes in {
             from {
                 transform: translate3d(8px, -5px, 8px)
@@ -92,21 +100,21 @@
             }
 
         }
-        .font-weight-bold {
-            font-weight: 1500;
-        }
+
         .display-1 {
             color: #C9196D;
             font-size: 10rem;
             bottom: 35px;
             user-select: none;
         }
+
         .display-5 {
             color: ghostwhite;
             user-select: none;
-            text-shadow:  white 5px 5px 10px;
+            text-shadow: white 5px 5px 10px;
             font-size: 4rem;
         }
+
         .pmf {
             width: 200px;
             height: 200px;
@@ -114,15 +122,265 @@
             border-bottom-left-radius: 100px;
             border-bottom-right-radius: 100px;
         }
-        @-webkit-keyframes text-flicker-in-glow{0%{opacity:0}10%{opacity:0;text-shadow:none}10.1%{opacity:1;text-shadow:none}10.2%{opacity:0;text-shadow:none}20%{opacity:0;text-shadow:none}20.1%{opacity:1;text-shadow:0 0 30px rgba(53,28,115,.25)}20.6%{opacity:0;text-shadow:none}30%{opacity:0;text-shadow:none}30.1%{opacity:1;text-shadow:0 0 30px rgba(53,28,115,.45),0 0 60px rgba(53,28,115,.25)}30.5%{opacity:1;text-shadow:0 0 30px rgba(53,28,115,.45),0 0 60px rgba(53,28,115,.25)}30.6%{opacity:0;text-shadow:none}45%{opacity:0;text-shadow:none}45.1%{opacity:1;text-shadow:0 0 30px rgba(53,28,115,.45),0 0 60px rgba(53,28,115,.25)}50%{opacity:1;text-shadow:0 0 30px rgba(53,28,115,.45),0 0 60px rgba(53,28,115,.25)}55%{opacity:1;text-shadow:0 0 30px rgba(53,28,115,.45),0 0 60px rgba(53,28,115,.25)}55.1%{opacity:0;text-shadow:none}57%{opacity:0;text-shadow:none}57.1%{opacity:1;text-shadow:0 0 30px rgba(53,28,115,.55),0 0 60px rgba(53,28,115,.35)}60%{opacity:1;text-shadow:0 0 30px rgba(53,28,115,.55),0 0 60px rgba(53,28,115,.35)}60.1%{opacity:0;text-shadow:none}65%{opacity:0;text-shadow:none}65.1%{opacity:1;text-shadow:0 0 30px rgba(53,28,115,.55),0 0 60px rgba(53,28,115,.35),0 0 100px rgba(53,28,115,.1)}75%{opacity:1;text-shadow:0 0 30px rgba(53,28,115,.55),0 0 60px rgba(53,28,115,.35),0 0 100px rgba(53,28,115,.1)}75.1%{opacity:0;text-shadow:none}77%{opacity:0;text-shadow:none}77.1%{opacity:1;text-shadow:0 0 30px rgba(53,28,115,.55),0 0 60px rgba(53,28,115,.4),0 0 110px rgba(53,28,115,.2),0 0 100px rgba(53,28,115,.1)}85%{opacity:1;text-shadow:0 0 30px rgba(53,28,115,.55),0 0 60px rgba(53,28,115,.4),0 0 110px rgba(53,28,115,.2),0 0 100px rgba(53,28,115,.1)}85.1%{opacity:0;text-shadow:none}86%{opacity:0;text-shadow:none}86.1%{opacity:1;text-shadow:0 0 30px rgba(53,28,115,.6),0 0 60px rgba(53,28,115,.45),0 0 110px rgba(53,28,115,.25),0 0 100px rgba(53,28,115,.1)}100%{opacity:1;text-shadow:0 0 30px rgba(53,28,115,.6),0 0 60px rgba(53,28,115,.45),0 0 110px rgba(53,28,115,.25),0 0 100px rgba(53,28,115,.1)}}@keyframes text-flicker-in-glow{0%{opacity:0}10%{opacity:0;text-shadow:none}10.1%{opacity:1;text-shadow:none}10.2%{opacity:0;text-shadow:none}20%{opacity:0;text-shadow:none}20.1%{opacity:1;text-shadow:0 0 30px rgba(53,28,115,.25)}20.6%{opacity:0;text-shadow:none}30%{opacity:0;text-shadow:none}30.1%{opacity:1;text-shadow:0 0 30px rgba(53,28,115,.45),0 0 60px rgba(53,28,115,.25)}30.5%{opacity:1;text-shadow:0 0 30px rgba(53,28,115,.45),0 0 60px rgba(53,28,115,.25)}30.6%{opacity:0;text-shadow:none}45%{opacity:0;text-shadow:none}45.1%{opacity:1;text-shadow:0 0 30px rgba(53,28,115,.45),0 0 60px rgba(53,28,115,.25)}50%{opacity:1;text-shadow:0 0 30px rgba(53,28,115,.45),0 0 60px rgba(53,28,115,.25)}55%{opacity:1;text-shadow:0 0 30px rgba(53,28,115,.45),0 0 60px rgba(53,28,115,.25)}55.1%{opacity:0;text-shadow:none}57%{opacity:0;text-shadow:none}57.1%{opacity:1;text-shadow:0 0 30px rgba(53,28,115,.55),0 0 60px rgba(53,28,115,.35)}60%{opacity:1;text-shadow:0 0 30px rgba(53,28,115,.55),0 0 60px rgba(53,28,115,.35)}60.1%{opacity:0;text-shadow:none}65%{opacity:0;text-shadow:none}65.1%{opacity:1;text-shadow:0 0 30px rgba(53,28,115,.55),0 0 60px rgba(53,28,115,.35),0 0 100px rgba(53,28,115,.1)}75%{opacity:1;text-shadow:0 0 30px rgba(53,28,115,.55),0 0 60px rgba(53,28,115,.35),0 0 100px rgba(53,28,115,.1)}75.1%{opacity:0;text-shadow:none}77%{opacity:0;text-shadow:none}77.1%{opacity:1;text-shadow:0 0 30px rgba(53,28,115,.55),0 0 60px rgba(53,28,115,.4),0 0 110px rgba(53,28,115,.2),0 0 100px rgba(53,28,115,.1)}85%{opacity:1;text-shadow:0 0 30px rgba(53,28,115,.55),0 0 60px rgba(53,28,115,.4),0 0 110px rgba(53,28,115,.2),0 0 100px rgba(53,28,115,.1)}85.1%{opacity:0;text-shadow:none}86%{opacity:0;text-shadow:none}86.1%{opacity:1;text-shadow:0 0 30px rgba(53,28,115,.6),0 0 60px rgba(53,28,115,.45),0 0 110px rgba(53,28,115,.25),0 0 100px rgba(53,28,115,.1)}100%{opacity:1;text-shadow:0 0 30px rgba(53,28,115,.6),0 0 60px rgba(53,28,115,.45),0 0 110px rgba(53,28,115,.25),0 0 100px rgba(53,28,115,.1)}}
 
+        @-webkit-keyframes text-flicker-in-glow {
+            0% {
+                opacity: 0
+            }
+            10% {
+                opacity: 0;
+                text-shadow: none
+            }
+            10.1% {
+                opacity: 1;
+                text-shadow: none
+            }
+            10.2% {
+                opacity: 0;
+                text-shadow: none
+            }
+            20% {
+                opacity: 0;
+                text-shadow: none
+            }
+            20.1% {
+                opacity: 1;
+                text-shadow: 0 0 30px rgba(53, 28, 115, .25)
+            }
+            20.6% {
+                opacity: 0;
+                text-shadow: none
+            }
+            30% {
+                opacity: 0;
+                text-shadow: none
+            }
+            30.1% {
+                opacity: 1;
+                text-shadow: 0 0 30px rgba(53, 28, 115, .45), 0 0 60px rgba(53, 28, 115, .25)
+            }
+            30.5% {
+                opacity: 1;
+                text-shadow: 0 0 30px rgba(53, 28, 115, .45), 0 0 60px rgba(53, 28, 115, .25)
+            }
+            30.6% {
+                opacity: 0;
+                text-shadow: none
+            }
+            45% {
+                opacity: 0;
+                text-shadow: none
+            }
+            45.1% {
+                opacity: 1;
+                text-shadow: 0 0 30px rgba(53, 28, 115, .45), 0 0 60px rgba(53, 28, 115, .25)
+            }
+            50% {
+                opacity: 1;
+                text-shadow: 0 0 30px rgba(53, 28, 115, .45), 0 0 60px rgba(53, 28, 115, .25)
+            }
+            55% {
+                opacity: 1;
+                text-shadow: 0 0 30px rgba(53, 28, 115, .45), 0 0 60px rgba(53, 28, 115, .25)
+            }
+            55.1% {
+                opacity: 0;
+                text-shadow: none
+            }
+            57% {
+                opacity: 0;
+                text-shadow: none
+            }
+            57.1% {
+                opacity: 1;
+                text-shadow: 0 0 30px rgba(53, 28, 115, .55), 0 0 60px rgba(53, 28, 115, .35)
+            }
+            60% {
+                opacity: 1;
+                text-shadow: 0 0 30px rgba(53, 28, 115, .55), 0 0 60px rgba(53, 28, 115, .35)
+            }
+            60.1% {
+                opacity: 0;
+                text-shadow: none
+            }
+            65% {
+                opacity: 0;
+                text-shadow: none
+            }
+            65.1% {
+                opacity: 1;
+                text-shadow: 0 0 30px rgba(53, 28, 115, .55), 0 0 60px rgba(53, 28, 115, .35), 0 0 100px rgba(53, 28, 115, .1)
+            }
+            75% {
+                opacity: 1;
+                text-shadow: 0 0 30px rgba(53, 28, 115, .55), 0 0 60px rgba(53, 28, 115, .35), 0 0 100px rgba(53, 28, 115, .1)
+            }
+            75.1% {
+                opacity: 0;
+                text-shadow: none
+            }
+            77% {
+                opacity: 0;
+                text-shadow: none
+            }
+            77.1% {
+                opacity: 1;
+                text-shadow: 0 0 30px rgba(53, 28, 115, .55), 0 0 60px rgba(53, 28, 115, .4), 0 0 110px rgba(53, 28, 115, .2), 0 0 100px rgba(53, 28, 115, .1)
+            }
+            85% {
+                opacity: 1;
+                text-shadow: 0 0 30px rgba(53, 28, 115, .55), 0 0 60px rgba(53, 28, 115, .4), 0 0 110px rgba(53, 28, 115, .2), 0 0 100px rgba(53, 28, 115, .1)
+            }
+            85.1% {
+                opacity: 0;
+                text-shadow: none
+            }
+            86% {
+                opacity: 0;
+                text-shadow: none
+            }
+            86.1% {
+                opacity: 1;
+                text-shadow: 0 0 30px rgba(53, 28, 115, .6), 0 0 60px rgba(53, 28, 115, .45), 0 0 110px rgba(53, 28, 115, .25), 0 0 100px rgba(53, 28, 115, .1)
+            }
+            100% {
+                opacity: 1;
+                text-shadow: 0 0 30px rgba(53, 28, 115, .6), 0 0 60px rgba(53, 28, 115, .45), 0 0 110px rgba(53, 28, 115, .25), 0 0 100px rgba(53, 28, 115, .1)
+            }
+        }
+
+        @keyframes text-flicker-in-glow {
+            0% {
+                opacity: 0
+            }
+            10% {
+                opacity: 0;
+                text-shadow: none
+            }
+            10.1% {
+                opacity: 1;
+                text-shadow: none
+            }
+            10.2% {
+                opacity: 0;
+                text-shadow: none
+            }
+            20% {
+                opacity: 0;
+                text-shadow: none
+            }
+            20.1% {
+                opacity: 1;
+                text-shadow: 0 0 30px rgba(53, 28, 115, .25)
+            }
+            20.6% {
+                opacity: 0;
+                text-shadow: none
+            }
+            30% {
+                opacity: 0;
+                text-shadow: none
+            }
+            30.1% {
+                opacity: 1;
+                text-shadow: 0 0 30px rgba(53, 28, 115, .45), 0 0 60px rgba(53, 28, 115, .25)
+            }
+            30.5% {
+                opacity: 1;
+                text-shadow: 0 0 30px rgba(53, 28, 115, .45), 0 0 60px rgba(53, 28, 115, .25)
+            }
+            30.6% {
+                opacity: 0;
+                text-shadow: none
+            }
+            45% {
+                opacity: 0;
+                text-shadow: none
+            }
+            45.1% {
+                opacity: 1;
+                text-shadow: 0 0 30px rgba(53, 28, 115, .45), 0 0 60px rgba(53, 28, 115, .25)
+            }
+            50% {
+                opacity: 1;
+                text-shadow: 0 0 30px rgba(53, 28, 115, .45), 0 0 60px rgba(53, 28, 115, .25)
+            }
+            55% {
+                opacity: 1;
+                text-shadow: 0 0 30px rgba(53, 28, 115, .45), 0 0 60px rgba(53, 28, 115, .25)
+            }
+            55.1% {
+                opacity: 0;
+                text-shadow: none
+            }
+            57% {
+                opacity: 0;
+                text-shadow: none
+            }
+            57.1% {
+                opacity: 1;
+                text-shadow: 0 0 30px rgba(53, 28, 115, .55), 0 0 60px rgba(53, 28, 115, .35)
+            }
+            60% {
+                opacity: 1;
+                text-shadow: 0 0 30px rgba(53, 28, 115, .55), 0 0 60px rgba(53, 28, 115, .35)
+            }
+            60.1% {
+                opacity: 0;
+                text-shadow: none
+            }
+            65% {
+                opacity: 0;
+                text-shadow: none
+            }
+            65.1% {
+                opacity: 1;
+                text-shadow: 0 0 30px rgba(53, 28, 115, .55), 0 0 60px rgba(53, 28, 115, .35), 0 0 100px rgba(53, 28, 115, .1)
+            }
+            75% {
+                opacity: 1;
+                text-shadow: 0 0 30px rgba(53, 28, 115, .55), 0 0 60px rgba(53, 28, 115, .35), 0 0 100px rgba(53, 28, 115, .1)
+            }
+            75.1% {
+                opacity: 0;
+                text-shadow: none
+            }
+            77% {
+                opacity: 0;
+                text-shadow: none
+            }
+            77.1% {
+                opacity: 1;
+                text-shadow: 0 0 30px rgba(53, 28, 115, .55), 0 0 60px rgba(53, 28, 115, .4), 0 0 110px rgba(53, 28, 115, .2), 0 0 100px rgba(53, 28, 115, .1)
+            }
+            85% {
+                opacity: 1;
+                text-shadow: 0 0 30px rgba(53, 28, 115, .55), 0 0 60px rgba(53, 28, 115, .4), 0 0 110px rgba(53, 28, 115, .2), 0 0 100px rgba(53, 28, 115, .1)
+            }
+            85.1% {
+                opacity: 0;
+                text-shadow: none
+            }
+            86% {
+                opacity: 0;
+                text-shadow: none
+            }
+            86.1% {
+                opacity: 1;
+                text-shadow: 0 0 30px rgba(53, 28, 115, .6), 0 0 60px rgba(53, 28, 115, .45), 0 0 110px rgba(53, 28, 115, .25), 0 0 100px rgba(53, 28, 115, .1)
+            }
+            100% {
+                opacity: 1;
+                text-shadow: 0 0 30px rgba(53, 28, 115, .6), 0 0 60px rgba(53, 28, 115, .45), 0 0 110px rgba(53, 28, 115, .25), 0 0 100px rgba(53, 28, 115, .1)
+            }
+        }
     </style>
 
 </head>
 <body>
 <div class="container-fluid">
     <div class="pmf bg-light position-absolute">
-            <img  style="width: 150px; margin-left: 25px; margin-top:10px; height: 150px;" src="PMF-Logo.png">
+        <img style="width: 150px; margin-left: 25px; margin-top:10px; height: 150px;" src="PMF-Logo.png">
     </div>
     <div class="row">
         <div class="col-12 font-weight-bold text-center my-3">
@@ -155,7 +413,8 @@
         <div class="col mx-2" style="height: 90rem"></div>
         <div class="col-thin mx-1" style="height: 90rem"></div>
         <div class="col-wide mx-2" style="height: 90rem"></div>
-        <div class="col-wide mx-2 test1" style="z-index: 1;"><h5 class="mx-0 my-2"><a href="#kontakt">GDE?</a></h5></div>
+        <div class="col-wide mx-2 test1" style="z-index: 1;"><h5 class="mx-0 my-2"><a href="#kontakt">GDE?</a></h5>
+        </div>
         <div class="col mx-2"></div>
         <div class="col mx-2"></div>
         <div class="col-thin mx-1"></div>
@@ -213,10 +472,71 @@
         <div class="card text-light bg-dark"><h1>Footer</h1></div>
     </div>
 </div>
+<div id="particles-js"></div>
+<script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script>
+    particlesJS('particles-js', {
+        'particles': {
+            'number': {'value': 80, 'density': {'enable': true, 'value_area': 800}},
+            'color': {'value': '#ffffff'},
+            'shape': {
+                'type': 'circle',
+                'stroke': {'width': 0, 'color': '#000000'},
+                'polygon': {'nb_sides': 5},
+                'image': {'src': 'img/github.svg', 'width': 100, 'height': 100}
+            },
+            'opacity': {
+                'value': 0.5,
+                'random': false,
+                'anim': {'enable': false, 'speed': 1, 'opacity_min': 0.1, 'sync': false}
+            },
+            'size': {
+                'value': 3,
+                'random': true,
+                'anim': {'enable': false, 'speed': 40, 'size_min': 0.1, 'sync': false}
+            },
+            'line_linked': {'enable': true, 'distance': 150, 'color': '#ffffff', 'opacity': 0.4, 'width': 1},
+            'move': {
+                'enable': true,
+                'speed': 6,
+                'direction': 'none',
+                'random': false,
+                'straight': false,
+                'out_mode': 'out',
+                'bounce': false,
+                'attract': {'enable': false, 'rotateX': 600, 'rotateY': 1200}
+            }
+        },
+        'interactivity': {
+            'detect_on': 'canvas',
+            'events': {
+                'onhover': {'enable': true, 'mode': 'repulse'},
+                'onclick': {'enable': true, 'mode': 'push'},
+                'resize': true
+            },
+            'modes': {
+                'grab': {'distance': 400, 'line_linked': {'opacity': 1}},
+                'bubble': {'distance': 400, 'size': 40, 'duration': 2, 'opacity': 8, 'speed': 3},
+                'repulse': {'distance': 200, 'duration': 0.4},
+                'push': {'particles_nb': 4},
+                'remove': {'particles_nb': 2}
+            }
+        },
+        'retina_detect': true
+    });
+    var update;
+    update = function () {
+        if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
+            count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
+        }
+        requestAnimationFrame(update);
+    };
+    requestAnimationFrame(update);
+</script>
 <script>
     const target = window.document.getElementsByTagName('h1')[0]
 
-    const flickerLetter = letter => `<span style="animation: text-flicker-in-glow ${Math.random()*4}s linear both ">${letter}</span>`
+    const flickerLetter = letter => `<span style="animation: text-flicker-in-glow ${Math.random() * 4}s linear both ">${letter}</span>`
     const colorLetter = letter => `<span style="color: hsla(329, 77%, 42% 1);">${letter}</span>`;
     const flickerAndColorText = text =>
         text
@@ -228,7 +548,7 @@
 
 
     neonGlory(target);
-    target.onclick = ({ target }) =>  neonGlory(target);
+    target.onclick = ({target}) => neonGlory(target);
 </script>
 </body>
 </html>
