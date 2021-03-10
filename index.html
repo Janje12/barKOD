@@ -5,15 +5,20 @@
     <title>barKOD</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/logo-flicker.css">
 
 </head>
 <body>
 <div class="container-fluid">
-    <div class="pmf bg-light position-absolute">
-        <img style="width: 150px; margin-left: 25px; margin-top:10px; height: 150px;" src="PMF-Logo.png">
+    <div class="row">
+        <div class="pmf col p-2 pb-3 bg-light justify-content-center d-flex position-absolute"
+             style="max-width: 11vw !important;">
+            <a href="https://www.pmf.uns.ac.rs/" target="_blank">
+                <img class="pmf-logo" src="PMF-Logo.png" alt="pmf-logo">
+            </a>
+        </div>
     </div>
     <div class="row">
         <div class="col-12 font-weight-bold text-center my-3">
@@ -21,40 +26,30 @@
             <h1 class="display-1 mt-0 pt-0 position-relative">HACKATHON</h1>
         </div>
     </div>
-    <div class="row mx-5 px-5 position-absolute">
-        <div class="col-wide mx-2 test1 text-light" style="z-index: 1;height: 45rem">
+    <div class="row d-flex justify-content-center">
+        <div class="col-1 barcode-nav text-light" style="z-index: 1;height: 50rem">
             <a href="#onama"><h5 class="mx-0 my-2 text-center">KO?</h5></a>
         </div>
-        <div class="col-thin mx-2" style="height: 45rem"></div>
-        <div class="col-thin mx-1" style="height: 45rem"></div>
-        <div class="col-thin mx-2" style="height: 45rem"></div>
-        <div class="col mx-2" style="height: 45rem"></div>
-        <div class="col mx-2" style="height: 45rem"></div>
-        <div class="col-wide mx-2 test1" style="z-index: 1;height: 70rem">
-            <a href="#sponzori"><h5 class="mx-0 my-2">KAKO?</h5></a>
+        <div class="col-1 d-none d-lg-block" style="height: 50rem"></div>
+        <div class="col-1 d-none d-md-block" style="height: 50rem"></div>
+        <div class="col-1 barcode-nav" style="z-index: 1;height: 70rem">
+            <a href="#sponzori"><h5 class="mx-0 my-2 text-center">KAKO?</h5></a>
         </div>
-        <div class="col mx-1" style="height: 70rem"></div>
-        <div class="col mx-2" style="height: 70rem"></div>
-        <div class="col mx-2" style="height: 70rem"></div>
-        <div class="col-wide mx-2" style="height: 70rem"></div>
-        <div class="col mx-1" style="height: 70rem"></div>
-        <div class="col-wide mx-2 test1" style="z-index: 1;height: 90rem">
-            <a href="#faq"><h5 class="mx-0 my-2">KADA?</h5></a>
+        <div class="col-1 d-none d-md-block" style="height: 70rem"></div>
+        <div class="col-1 d-none d-md-block" style="height: 70rem"></div>
+        <div class="col-1 col-xs-1 barcode-nav" style="z-index: 1;height: 90rem">
+            <a href="#faq"><h5 class="mx-0 my-2 text-center">KADA?</h5></a>
         </div>
-        <div class="col mx-2" style="height: 90rem"></div>
-        <div class="col mx-1" style="height: 90rem"></div>
-        <div class="col mx-2" style="height: 90rem"></div>
-        <div class="col-thin mx-1" style="height: 90rem"></div>
-        <div class="col-wide mx-2" style="height: 90rem"></div>
-        <div class="col-wide mx-2 test1" style="z-index: 1;"><h5 class="mx-0 my-2"><a href="#kontakt">GDE?</a></h5>
+        <div class="col-1 d-none d-md-block" style="height: 90rem;"></div>
+        <div class="col-1 d-none d-lg-block" style="height: 90rem;"></div>
+        <div class="barcode-nav col-1" style="z-index: 1;">
+            <a href="#kontakt"><h5 class="mx-0 my-2 text-center">GDE?</h5></a>
         </div>
-        <div class="col mx-2"></div>
-        <div class="col mx-2"></div>
-        <div class="col-thin mx-1"></div>
-        <div class="col-thin mx-2"></div>
+        <div class="col-1 d-none d-xl-block"></div>
+        <div class="col-1 d-none d-xl-block"></div>
     </div>
-    <div class="row position-relative">
-        <div class="card bg-dark" style="max-width: 25%;z-index: 2; transform: translate(4.5rem,35rem)">
+    <div class="row" style="height: 0">
+        <div class="card bg-dark card-1">
             <h5 class="card-header text-light bg-dark" id="onama">Ko?</h5>
             <div class="card-body text-light">
                 <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
@@ -65,8 +60,8 @@
             </div>
         </div>
     </div>
-    <div class="row position-relative">
-        <div class="card bg-dark" style="max-width: 25%;z-index: 2; transform: translate(26rem, 45rem)">
+    <div class="row" style="height: 0">
+        <div class="card bg-dark card-2">
             <div class="card-body text-light">
                 <h5 class="card-title" id="sponzori">Kako?</h5>
                 <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
@@ -77,8 +72,8 @@
             </div>
         </div>
     </div>
-    <div class="row position-relative">
-        <div class="card bg-dark" style="max-width: 25%;z-index: 2; transform: translate(47.5rem, 55rem)">
+    <div class="row" style="height: 0">
+        <div class="card bg-dark card-3" style="z-index: 2; ">
             <div class="card-body text-light">
                 <h5 class="card-title" id="faq">Kada?</h5>
                 <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
@@ -89,8 +84,8 @@
             </div>
         </div>
     </div>
-    <div class="row position-relative">
-        <div class="card bg-dark" style="max-width: 25%;z-index: 2; transform: translate(65.5rem, 65rem)">
+    <div class="row">
+        <div class="card bg-dark card-4">
             <div class="card-body text-light">
                 <h5 class="card-title" id="kontakt">Gde?</h5>
                 <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
@@ -101,10 +96,18 @@
             </div>
         </div>
     </div>
-    <div class="row position-relative" style="transform: translateY(63rem)">
-        <div class="card text-light bg-dark"><h1>Footer</h1></div>
+    <div class="row">
+        <div class="card bg-dark" style="z-index: 1;">
+            <div class="text-muted mt-3">
+                <p class="text-center">© Sva autorska prava, zaštitni znakovi i znakovi usluga pripadaju odgovarajućim
+                    vlasnicima.
+                <span class="justify-content-end d-flex">Made by: <a target="_blank" href="https://github.com/Janje12">@janje12</a>
+                </span></p>
+            </div>
+        </div>
     </div>
 </div>
+
 <div id="particles-js"></div>
 <script src="js/particles.js"></script>
 <script src="js/app.js">
