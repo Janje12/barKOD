@@ -2,6 +2,22 @@ html {
     scroll-behavior: smooth;
 }
 
+.card-text {
+    text-align: justify;
+}
+
+.social-icon:hover {
+    color: white;
+    animation: fade-in 0.5s forwards;
+}
+
+@keyframes fade-in {
+    to {
+        color: #C9196D;
+    }
+
+}
+
 body {
     font-family: 'MyWebFont', monospace;
     margin: 0;
@@ -153,7 +169,7 @@ a {
 }
 
 a:hover {
-    color: rgba(53, 28, 115, 1);
+    color: #C9196D;
 }
 
 .display-1 {
