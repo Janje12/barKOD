@@ -2,6 +2,10 @@ html {
     scroll-behavior: smooth;
 }
 
+.fa-4x {
+    font-size: 4rem !important;
+}
+
 .card-text {
     text-align: justify;
 }
@@ -70,6 +74,18 @@ canvas {
 }
 
 @media only screen and (max-width: 600px) {
+    .pmf {
+        z-index: 10;
+        left: 2rem !important;
+        border-bottom-left-radius: 100px;
+        border-bottom-right-radius: 100px;
+    }
+    .fa-4x {
+        font-size: 2rem !important;
+    }
+    .fa-5x {
+        font-size: 3rem !important;
+    }
     .card-1 {
         min-width: 100% !important;
         transform: translate(0, -65rem) !important;
