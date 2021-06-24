@@ -241,4 +241,7 @@ a {
 
 }
 
+span.bg-secondary:hover {
+    background-color: #434b53 !important;
+}
 
