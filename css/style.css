@@ -191,7 +191,7 @@ a:hover {
 .display-1 {
     z-index: 2;
     color: #C9196D;
-    font-size: 10vw;
+    font-size: 4.5rem;
     user-select: none;
 }
 
@@ -200,9 +200,16 @@ a:hover {
     color: ghostwhite;
     user-select: none;
     text-shadow: white 5px 5px 10px;
-    font-size: 4vw;
+    font-size: 2.5rem;
 }
 
+.display-6 {
+    z-index: 2;
+    color: ghostwhite;
+    user-select: none;
+    text-shadow: white 5px 5px 10px;
+    font-size: 2rem;
+}
 .pmf {
     z-index: 10;
     left: 5rem;
@@ -245,3 +252,8 @@ span.bg-secondary:hover {
     background-color: #434b53 !important;
 }
 
+.btn-light:hover {
+    color: #000;
+    background-color: gray;
+    border-color: gray;
+}
