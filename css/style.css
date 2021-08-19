@@ -1,5 +1,6 @@
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 .fa-4x {
@@ -21,6 +22,14 @@ html {
     }
 
 }
+
+@keyframes fade-in-backgrouond {
+    to {
+        background-color: #C9196D;
+    }
+
+}
+
 
 body {
     font-family: 'MyWebFont', monospace;
@@ -55,7 +64,7 @@ canvas {
 
 @font-face {
     font-family: 'MyWebFont';
-    src: url('envy.woff') format('truetype');
+    src: url('Typo_Round_Regular_Demo.otf') format('opentype');
 }
 
 .barcode-nav {
@@ -80,12 +89,15 @@ canvas {
         border-bottom-left-radius: 100px;
         border-bottom-right-radius: 100px;
     }
+
     .fa-4x {
         font-size: 2rem !important;
     }
+
     .fa-5x {
         font-size: 3rem !important;
     }
+
     .card-1 {
         min-width: 100% !important;
         transform: translate(0, -65rem) !important;
@@ -195,11 +207,22 @@ a:hover {
     user-select: none;
 }
 
+.faq-icon {
+    background-color: white;
+    font-size: 3.7rem;
+    margin-top: 3.5px;
+    color: black;
+    border-radius: 8px;
+}
+.faq-icon:hover {
+    animation: fade-in-backgrouond  0.5s forwards;
+}
+
 .display-5 {
     z-index: 2;
     color: ghostwhite;
     user-select: none;
-    text-shadow: white 5px 5px 10px;
+    /*text-shadow: white 5px 5px 10px;*/
     font-size: 2.5rem;
 }
 
@@ -207,9 +230,10 @@ a:hover {
     z-index: 2;
     color: ghostwhite;
     user-select: none;
-    text-shadow: white 5px 5px 10px;
+    /*text-shadow: white 5px 5px 10px;*/
     font-size: 2rem;
 }
+
 .pmf {
     z-index: 10;
     left: 5rem;
